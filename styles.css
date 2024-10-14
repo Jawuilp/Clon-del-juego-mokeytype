@@ -1,0 +1,135 @@
+  :root {
+    color-scheme: light dark;
+    --green:#00b755;
+    --yellow:#daaf38;
+    --red: #cf1919;
+    --black:#222;
+    --gray:#999;
+
+ }
+
+  body {
+    color: white;
+   font-family: monospace;
+   background: var(--black);
+   display: gridS;
+   padding: 32px;
+   justify-content: center;
+   margin-top:32px ;
+   padding: 16px;
+  }
+
+  section {
+
+    padding: 16px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  time { 
+    color: var(--yellow);
+  }
+
+  input {
+    z-index: -999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 8px;
+    margin: 0;
+  }
+
+  letter {
+    color: var(--gray);
+    position: relative;
+
+    &.active::before {
+      content: '|';
+      color: var(--yellow);
+      font-size: 14px;
+      position: absolute;
+      left: -65%;
+      animation: 1s blink infinite ease-in-out;
+  }
+
+  &.active.is-land::before {
+    left: 65%;
+  }
+
+  &.correcto {
+    color: var(--green);
+  }
+
+  &.incorrecto {
+    color: var(--red);
+  }
+}
+
+ word {
+
+  border-bottom: 1.6px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+
+  &.marked {
+    border-color: var(--red);
+  }
+ }
+
+ #results {
+  display: none;
+ }
+ 
+ #game {
+  display: flex;
+ }
+
+   h2 {
+    font-weight: 400;
+    opacity: .4;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  h3 {
+    font-weight: 400;
+    margin: 0;
+    font-size: 24px;
+    color: var(--yellow);
+  }
+
+  button {
+    background: transparent;
+    border: 0;
+    margin-top: 32px;
+    padding: 8px;
+    opacity: .4;
+    display: inline-block;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    cursor: pointer;
+    border-radius: 16px;
+
+    &:hover {
+      background: #444;
+      opacity: 1;
+      scale: 110%;
+    }
+  }
+@keyframes blink {
+  0%,25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+}
